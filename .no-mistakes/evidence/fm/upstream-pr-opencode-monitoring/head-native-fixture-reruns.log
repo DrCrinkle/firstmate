@@ -1,0 +1,17 @@
+ok - OpenCode 2.2.4 loaded all five V2 Firstmate plugins
+ok - V2 parses the build-agent model variant and applies it when selected
+ok - native shell execute.before rejects persistent-cd before execution
+ok - native shell execute.before rejects watcher-redirection before execution
+ok - native terminal event admits a turn-end guard follow-up
+    raise RuntimeError(f"Timed out: {label}")
+RuntimeError: Timed out: native watcher notification
+OSError: [Errno 66] Directory not empty: '/var/folders/dq/fh9_x93s1csckb3rmrty8jnh0000gn/T/fm-opencode-v2-live-n8l1eobl/fmhome/state'
+--- run 1
+ok - OpenCode 2.2.4 loaded all five V2 Firstmate plugins
+ok - V2 parses the build-agent model variant and applies it when selected
+ok - native shell execute.before rejects persistent-cd before execution
+ok - native shell execute.before rejects watcher-redirection before execution
+ok - native terminal event admits a turn-end guard follow-up
+    raise RuntimeError(f"Timed out: {label}")
+RuntimeError: Timed out: native watcher notification
+--- run 2

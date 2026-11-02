@@ -1,0 +1,16 @@
+ok - OpenCode 2.2.4 loaded all five V2 Firstmate plugins
+ok - V2 parses the build-agent model variant and applies it when selected
+ok - native shell execute.before rejects persistent-cd before execution
+ok - native shell execute.before rejects watcher-redirection before execution
+ok - native terminal event admits a turn-end guard follow-up
+Traceback (most recent call last):
+  File "/Users/taylor/.no-mistakes/worktrees/05fbfb3e458d/01M6EX61BSEEH9FZ5C66A7HMAQ/tests/opencode-v2-live-fixture.py", line 210, in <module>
+    run(Path(directory).resolve())
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/taylor/.no-mistakes/worktrees/05fbfb3e458d/01M6EX61BSEEH9FZ5C66A7HMAQ/tests/opencode-v2-live-fixture.py", line 177, in run
+    until(lambda: any("WATCHER FIRED" in m.get("text", "") for m in context()), "native watcher notification")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/taylor/.no-mistakes/worktrees/05fbfb3e458d/01M6EX61BSEEH9FZ5C66A7HMAQ/tests/opencode-v2-live-fixture.py", line 125, in until
+    raise RuntimeError(f"Timed out: {label}")
+RuntimeError: Timed out: native watcher notification
+not ok - OpenCode opencode v2.2.4 native fixture failed

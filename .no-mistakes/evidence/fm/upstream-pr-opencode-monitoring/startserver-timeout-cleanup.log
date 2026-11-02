@@ -1,0 +1,9 @@
+    at async scenario (file:///Users/taylor/.no-mistakes/worktrees/05fbfb3e458d/01M6EX61BSEEH9FZ5C66A7HMAQ/tests/opencode-v2-scope-live-fixture.mjs:281:5)
+    at async file:///Users/taylor/.no-mistakes/worktrees/05fbfb3e458d/01M6EX61BSEEH9FZ5C66A7HMAQ/tests/opencode-v2-scope-live-fixture.mjs:308:3
+
+Node.js v26.13.0
+fixture exit=1 after 35s
+fake opencode server pid=82402
+reaped: fake server pid 82402 is gone
+no 'sleep 987' process remains
+no fm-opencode-scope lab dir left behind
