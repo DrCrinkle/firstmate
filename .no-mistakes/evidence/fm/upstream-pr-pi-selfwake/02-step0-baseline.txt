@@ -1,0 +1,9 @@
+time: 21:25:56
+main assistant msgs: 2  user msgs: 1
+branch outcomes:
+(none)
+wake-queue:        0 bytes
+home-appends:
+(none)
+status log:
+     1	done [at=1793654696]: corr=3d6e963bd1518a0c CONFIG_REREAD applied, startup-memory-budget=7500; idle, no work in flight

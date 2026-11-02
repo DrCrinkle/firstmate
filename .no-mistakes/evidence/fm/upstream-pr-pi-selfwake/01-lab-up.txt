@@ -1,0 +1,14 @@
+lab: /private/tmp/fmlab.Ba43Ti (tear down with: bin/fm-live-lab.sh down /private/tmp/fmlab.Ba43Ti)
+tree: 78611d46391dc2cd9b9fef5a76a456d8a1a4437a from /Users/taylor/.no-mistakes/worktrees/05fbfb3e458d/01M6EZVSKWNP4GDFB3X6H7D7SR
+scaffolded: /private/tmp/fmlab.Ba43Ti/home/data/lab4f2706ff1f19-mate/brief.md (secondmate charter)
+home=/private/tmp/fmlab.Ba43Ti/mate
+spawned lab4f2706ff1f19-mate harness=claude kind=secondmate mode=secondmate yolo=off window=firstmate:fm-lab4f2706ff1f19-mate worktree=/private/tmp/fmlab.Ba43Ti/mate
+primary: pi --approve --session-dir /private/tmp/fmlab.Ba43Ti/pi-sessions --model cliproxy/gpt-6-luna --thinking off
+ok primary: pi pid 66327 in /private/tmp/fmlab.Ba43Ti/home
+ok probe: the primary answered LABREADY-4f2706ff1f19
+ok trust: Pi trust store unchanged (session-only --approve)
+ok extensions: fm-primary-pi-watch fm-primary-turnend-guard fm-branch-supervision
+ok watcher: live watcher with a fresh beacon
+ok mate: lab4f2706ff1f19-mate pid 66261 in /private/tmp/fmlab.Ba43Ti/mate
+ok treehouse: ~/.treehouse unchanged
+ready: /private/tmp/fmlab.Ba43Ti

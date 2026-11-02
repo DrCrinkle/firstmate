@@ -1,0 +1,46 @@
+time: 21:33:11
+main assistant msgs: 14  user msgs: 3
+branch outcomes:
+{"seq":1,"epoch":1793654823,"task":"lab4f2706ff1f19-mate","wake":"signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status","verdict":"routine","summary":"The second mate applied the CONFIG_REREAD update with a 7,500-byte startup memory budget; it is idle with no work in flight.","silent":false,"statusEndpoint":119,"statusIdent":"strong:16777229:189799154:1793654696.652344027"}
+{"seq":2,"epoch":1793655149,"task":"lab4f2706ff1f19-mate","wake":"signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status","verdict":"routine","summary":"The second mate confirmed that the canary window decision is resolved and remains idle with no work in flight.","silent":true,"statusEndpoint":408,"statusIdent":"strong:16777229:189799154:1793654696.652344027"}
+wake-queue:        0 bytes
+home-appends:
+v1
+ident=strong:16777229:189799154:1793654696.652344027
+200	297
+status log:
+     1	done [at=1793654696]: corr=3d6e963bd1518a0c CONFIG_REREAD applied, startup-memory-budget=7500; idle, no work in flight
+     2	needs-decision [key=live-hold]: what rollout window should I use for the canary?
+     3	resolved [key=live-hold] [at=1793655047]: answered: Use Tuesday 10:00 UTC for the canary window.
+     4	done [at=1793655062]: corr=7fc62959befea295 noted: canary window is Tuesday 10:00 UTC; no work in flight, idle
+ $ bin/fm-lease.sh claim lab4f2706ff1f19-mate (timeout 120s)                                                  
+ (no output)                                           
+ Took 0.3s                                             
+ $ bin/fm-send.sh lab4f2706ff1f19-mate --resolve-key live-hold 'Use Tuesday 10:00 UTC for the canary window.' (timeout 120s)                                                                                                
+ (no output)                                           
+ Took 7.8s                                             
+ $ bin/fm-lease.sh release lab4f2706ff1f19-mate (timeout 120s)                                                
+ (no output)                                           
+ Took 0.2s                                             
+ $ bin/fm-captain-hold.sh --help (timeout 120s)        
+ ... (218 earlier lines, ctrl+o to expand)             
+ no new persisted state, and an exact retry republishes the same line, which                                  
+ the channel deduplicates. A main home has no channel and publishes nothing.                                  
+ The hold or answer is already durable in the backlog, so a channel that                                      
+ cannot be written is reported as `actionable:` on stderr rather than undoing                                 
+ the record; bin/fm-inactive-reconcile.sh's diagnostics name a broken binding.                                
+ Took 2.4s                                             
+ $ bin/fm-captain-hold.sh answers --any-origin --source main-chat <<'EOF'                                     
+ live-hold   Use Tuesday 10:00 UTC for the canary window.   main-chat   done                                  
+ EOF                                                   
+ bin/fm-crew-state.sh lab4f2706ff1f19-mate (timeout 120s)                                                     
+ skipped: live-hold (no captain-held task with that id)
+ answers: closed=0 skipped=1                           
+ state: done · source: status-log · corr=7fc62959befea295 noted: canary window is Tuesday 10:00 UTC; no work in flight, idle                                                                                                
+ Took 5.2s                                             
+ Captain, the live-hold decision was answered with “Use Tuesday 10:00 UTC for the canary window.” The second mate confirmed the decision is resolved and is idle. The separate captain-hold backlog lookup found no         
+ matching task, so it recorded no backlog answer.      
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/private/tmp/fmlab.Ba43Ti/home (main)
+↑53k ↓1.2k R580k CH99.4% 40.5%/128k (auto)                                                                                                                                                                        gpt-6-luna

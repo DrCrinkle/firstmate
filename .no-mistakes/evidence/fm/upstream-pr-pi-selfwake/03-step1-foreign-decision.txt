@@ -1,0 +1,37 @@
+time: 21:30:27
+main assistant msgs: 8  user msgs: 2
+branch outcomes:
+{"seq":1,"epoch":1793654823,"task":"lab4f2706ff1f19-mate","wake":"signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status","verdict":"routine","summary":"The second mate applied the CONFIG_REREAD update with a 7,500-byte startup memory budget; it is idle with no work in flight.","silent":false,"statusEndpoint":119,"statusIdent":"strong:16777229:189799154:1793654696.652344027"}
+wake-queue:        0 bytes
+home-appends:
+(none)
+status log:
+     1	done [at=1793654696]: corr=3d6e963bd1518a0c CONFIG_REREAD applied, startup-memory-budget=7500; idle, no work in flight
+     2	needs-decision [key=live-hold]: what rollout window should I use for the canary?
+ fm_watch_arm_pi                                       
+ watcher: started Pi extension arm child 1; future ordinary re-arms are automatic; call fm_watch_arm_pi again only after a later notification says the cycle is missing, failed, or unhealthy                               
+ LABREADY-4f2706ff1f19                                 
+ ⛵ lab4f2706ff1f19-mate: The second mate applied the CONFIG_REREAD update with a 7,500-byte startup memory budget; it is idle with no work in flight.                                                                      
+ ⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status                                                                                                 
+ Run bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned.            
+ $ bin/fm-wake-drain.sh (timeout 120s)                 
+ ... (3 earlier lines, ctrl+o to expand)               
+ OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):                 
+ lab4f2706ff1f19-mate [key=live-hold] needs-decision: what rollout window should I use for the canary?        
+ OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'              
+ OPEN DECISIONS: <key> is the [key=...] printed before the verb; a token inside a note is prose, not a key.   
+ WARNING: queued wakes pending - drain them with bin/fm-wake-drain.sh before anything else.                   
+ Took 7.9s                                             
+ [skill] captain-hold-lifecycle (ctrl+o to expand)     
+ [skill] secondmate-provisioning (ctrl+o to expand)    
+ $ bin/fm-crew-state.sh lab4f2706ff1f19-mate (timeout 120s)                                                   
+ state: parked · source: status-log · what rollout window should I use for the canary?                        
+ Took 0.3s                                             
+ $ bin/fm-wake-drain.sh --ack-through 4 --recovery-generation 8154.1793654880.1Y8vJo (timeout 120s)           
+ (no output)                                           
+ Took 1.4s                                             
+ Captain, the second mate is parked awaiting your decision: what rollout window should it use for the canary? 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/private/tmp/fmlab.Ba43Ti/home (main)
+↑49k ↓800 R290k CH99.6% 37.4%/128k (auto)                                                                                                                                                                         gpt-6-luna

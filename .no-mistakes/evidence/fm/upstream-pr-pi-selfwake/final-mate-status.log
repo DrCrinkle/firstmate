@@ -1,0 +1,6 @@
+done [at=1793653486]: corr=8c46875fec3ca6b2 config reread applied, startup-memory-budget=7500
+needs-decision [key=live-hold] [at=1793653508]: what rollout window should I use for the lab deploy? options: Tuesday 10:00 UTC or Thursday 16:00 UTC
+resolved [key=live-hold] [at=1793653640]: answered: Use Tuesday 10:00 UTC.
+done [at=1793653676]: corr=ea3e98bb64059da6 noted Tuesday 10:00 UTC; no task attached, nothing run
+working [at=1793653793]: ack, continuing with the Tuesday window
+needs-decision [key=live-new] [at=1793653920]: should I also notify the ops channel before the Tuesday rollout? yes or no

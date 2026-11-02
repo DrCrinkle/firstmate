@@ -1,0 +1,45 @@
+main_assistant_turns=18 user=5
+outcomes:
+{"seq":1,"verdict":"routine","silent":true,"summary":"The secondmate recorded the captain’s Tuesday 10:00 UTC answer and confirmed no task was attached; this matches the result already reported to the captain."}
+{"seq":2,"verdict":"routine","silent":true,"summary":"The secondmate acknowledged the Tuesday 10:00 UTC rollout window and is continuing; no new result or action is reported."}
+wake-queue:
+status:
+     1	done [at=1793653486]: corr=8c46875fec3ca6b2 config reread applied, startup-memory-budget=7500
+     2	needs-decision [key=live-hold] [at=1793653508]: what rollout window should I use for the lab deploy? options: Tuesday 10:00 UTC or Thursday 16:00 UTC
+     3	resolved [key=live-hold] [at=1793653640]: answered: Use Tuesday 10:00 UTC.
+     4	done [at=1793653676]: corr=ea3e98bb64059da6 noted Tuesday 10:00 UTC; no task attached, nothing run
+     5	working [at=1793653793]: ack, continuing with the Tuesday window
+     6	needs-decision [key=live-new] [at=1793653920]: should I also notify the ops channel before the Tuesday rollout? yes or no
+ledger:
+v1
+ident=strong:16777229:189404041:1793653486.697440668
+244	319
+ Took 4.3s                                             
+ $ bin/fm-crew-state.sh laba690b2bf82ad-mate && bin/fm-wake-drain.sh --help (timeout 120s)                    
+ state: unknown · source: none · no current-state source available                                            
+ usage: fm-wake-drain.sh [--ack-through SEQUENCE --recovery-generation GENERATION]                            
+ Command exited with code 2                            
+ Took 12.3s                                            
+ $ grep -E 'live-hold|Tuesday' state/laba690b2bf82ad-mate.status | tail -10 (timeout 120s)                    
+ needs-decision [key=live-hold] [at=1793653508]: what rollout window should I use for the lab deploy? options: Tuesday 10:00 UTC or Thursday 16:00 UTC                                                                      
+ resolved [key=live-hold] [at=1793653640]: answered: Use Tuesday 10:00 UTC.                                   
+ Took 2.0s                                             
+ Captain, I answered the secondmate’s live-hold decision: use Tuesday 10:00 UTC. The decision is recorded as resolved.                                                                                                      
+ ⁣FIRSTMATE_OP: v1 watcher: FIRSTMATE WATCHER WAKE: signal: /private/tmp/fmlab.kVTSYu/home/state/laba690b2bf82ad-mate.status                                                                                                 
+ Run bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned.            
+ $ bin/fm-wake-drain.sh (timeout 120s)                 
+ ... (4 earlier lines, ctrl+o to expand)               
+ OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):                 
+ laba690b2bf82ad-mate [key=live-new] needs-decision: should I also notify the ops channel before the Tuesday rollout? yes or no                                                                                             
+ OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'              
+ OPEN DECISIONS: <key> is the [key=...] printed before the verb; a token inside a note is prose, not a key.   
+ WARNING: queued wakes pending - drain them with bin/fm-wake-drain.sh before anything else.                   
+ Took 7.5s                                             
+ $ bin/fm-wake-drain.sh --ack-through 8 --recovery-generation 54657.1793653970.YMJJAE (timeout 120s)          
+ (no output)                                           
+ Took 3.5s                                             
+ Captain, the secondmate asks whether to notify the ops channel before Tuesday’s rollout. Should I answer yes or no?                                                                                                        
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/private/tmp/fmlab.kVTSYu/home (main)
+↑65k ↓1.1k R924k CH99.7% 48.6%/128k (auto)                                                                                                                                                                        gpt-6-luna

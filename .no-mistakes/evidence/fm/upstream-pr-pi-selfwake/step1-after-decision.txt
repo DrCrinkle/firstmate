@@ -1,0 +1,33 @@
+main_assistant_turns=10 user=3
+outcomes:
+wake-queue:
+status:
+     1	done [at=1793653486]: corr=8c46875fec3ca6b2 config reread applied, startup-memory-budget=7500
+     2	needs-decision [key=live-hold] [at=1793653508]: what rollout window should I use for the lab deploy? options: Tuesday 10:00 UTC or Thursday 16:00 UTC
+ledger:
+ Run bin/fm-wake-drain.sh first and handle the queued wake. Watcher continuity is extension-owned.            
+ $ bin/fm-wake-drain.sh (timeout 120s)                 
+ ... (5 earlier lines, ctrl+o to expand)               
+ OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):                 
+ laba690b2bf82ad-mate [key=live-hold] needs-decision: what rollout window should I use for the lab deploy? options: Tuesday 10:00 UTC or Thursday 16:00 UTC                                                                 
+ OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'              
+ OPEN DECISIONS: <key> is the [key=...] printed before the verb; a token inside a note is prose, not a key.   
+ WARNING: queued wakes pending - drain them with bin/fm-wake-drain.sh before anything else.                   
+ Took 4.4s                                             
+ [skill] secondmate-provisioning (ctrl+o to expand)    
+ $ bin/fm-crew-state.sh laba690b2bf82ad-mate (timeout 120s)                                                   
+ state: parked · source: status-log · what rollout window should I use for the lab deploy? options: Tuesday 10:00 UTC or Thursday 16:00 UTC                                                                                 
+ Took 1.3s                                             
+ read /private/tmp/fmlab.kVTSYu/home/bin/fm-send.sh    
+ [skill] ask-user-authority (ctrl+o to expand)         
+ [skill] validation-supervision (ctrl+o to expand)     
+ fm_branch_outcomes recent=20                          
+ (no branch outcomes recorded)                         
+ $ bin/fm-wake-drain.sh --ack-through 2 --recovery-generation 64584.1793653521.753kla (timeout 120s)          
+ (no output)                                           
+ Took 0.7s                                             
+ Captain, the lab secondmate asks which rollout window to use: Tuesday 10:00 UTC or Thursday 16:00 UTC. Which do you choose?                                                                                                
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/private/tmp/fmlab.kVTSYu/home (main)
+↑62k ↓554 R434k CH99.6% 47.8%/128k (auto)                                                                                                                                                                         gpt-6-luna

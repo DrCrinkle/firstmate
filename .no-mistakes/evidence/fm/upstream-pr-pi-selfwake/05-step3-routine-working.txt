@@ -1,0 +1,17 @@
+time: 21:35:59
+main assistant msgs: 14  user msgs: 3
+branch outcomes:
+{"seq":1,"epoch":1793654823,"task":"lab4f2706ff1f19-mate","wake":"signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status","verdict":"routine","summary":"The second mate applied the CONFIG_REREAD update with a 7,500-byte startup memory budget; it is idle with no work in flight.","silent":false,"statusEndpoint":119,"statusIdent":"strong:16777229:189799154:1793654696.652344027"}
+{"seq":2,"epoch":1793655149,"task":"lab4f2706ff1f19-mate","wake":"signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status","verdict":"routine","summary":"The second mate confirmed that the canary window decision is resolved and remains idle with no work in flight.","silent":true,"statusEndpoint":408,"statusIdent":"strong:16777229:189799154:1793654696.652344027"}
+{"seq":3,"epoch":1793655296,"task":"lab4f2706ff1f19-mate","wake":"signal: /private/tmp/fmlab.Ba43Ti/home/state/lab4f2706ff1f19-mate.status","verdict":"routine","summary":"The second mate acknowledged the Tuesday canary window and is continuing; no new result or artifact was reported.","silent":true,"statusEndpoint":473,"statusIdent":"strong:16777229:189799154:1793654696.652344027"}
+wake-queue:        0 bytes
+home-appends:
+v1
+ident=strong:16777229:189799154:1793654696.652344027
+200	297
+status log:
+     1	done [at=1793654696]: corr=3d6e963bd1518a0c CONFIG_REREAD applied, startup-memory-budget=7500; idle, no work in flight
+     2	needs-decision [key=live-hold]: what rollout window should I use for the canary?
+     3	resolved [key=live-hold] [at=1793655047]: answered: Use Tuesday 10:00 UTC for the canary window.
+     4	done [at=1793655062]: corr=7fc62959befea295 noted: canary window is Tuesday 10:00 UTC; no work in flight, idle
+     5	working [at=1793655205]: ack, continuing with the Tuesday window
